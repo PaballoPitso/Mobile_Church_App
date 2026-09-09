@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="projectChurch.Views.PageB"
+             Title="ABOUT"
+             BackgroundColor="{DynamicResource White}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+        <StackLayout BackgroundColor="{DynamicResource LightGoldenrodYellow}"  HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,40,0" >
+                    <Label Text=" Worship the lord "  FontSize="30" FontAttributes="Bold,Italic" HorizontalTextAlignment="Center"  TextColor="{DynamicResource Black}"/>
+                </ContentView>
+            <ContentView Padding="-260,70,0,60" >
+                <Label Text="(Kgumamelang Morena)    " FontSize="25" FontAttributes="Italic" HorizontalTextAlignment="Center"  TextColor="{DynamicResource Black}"/>
+            </ContentView>
+        </StackLayout>
+        <BoxView HeightRequest="1" Color="{DynamicResource LightGray}" HorizontalOptions="FillAndExpand" Margin="0,0.1"/>
+        <StackLayout BackgroundColor="{DynamicResource LightGoldenrodYellow}"  HorizontalOptions="Fill">
+                        <HorizontalStackLayout>
+                             <Label Text="Switch mode                        "
+                               TextColor="{DynamicResource Black}"
+                               FontSize="31" FontAttributes="None"   >
+                             </Label>
+
+                             <Switch x:Name="themeSwitch"
+            
+                                        Toggled="themeSwitch_Toggled"    ThumbColor="{DynamicResource LightGray}">
+
+                             </Switch>
+
+                        </HorizontalStackLayout>
+
+
+                    </StackLayout>
+        <BoxView HeightRequest="1" Color="{DynamicResource LightGray}" HorizontalOptions="FillAndExpand" Margin="0,0.1"/>
+        <CollectionView x:Name="EntriesCollView"
+             ItemsSource="{Binding Entries}"
+             SelectionMode="Single" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
+                            <Button Text="{Binding Title}" BackgroundColor="{DynamicResource Black}" TextColor="{DynamicResource White}" BorderColor="{DynamicResource LightGray}" BorderWidth="2" WidthRequest="300" CornerRadius="20" FontSize="16" FontAttributes="Bold" Margin="4" Clicked="Button_Clicked"/>
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        <BoxView HeightRequest="1" Color="{DynamicResource LightGray}" HorizontalOptions="FillAndExpand" Margin="0,0.1"/>
+      
+        <Label Text="version 1.0 
+               
+               
+               
+               
+ 
+               
+               
+               © 2025 Tee and Tee Stationer and Copy Centre. All rights reserved " FontSize="15" FontAttributes="Italic" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" TextColor="{DynamicResource Gray100}"/>
+       
+    </StackLayout>
+    
+    
+   
+</ContentPage>

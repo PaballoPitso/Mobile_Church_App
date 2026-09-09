@@ -1,0 +1,45 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="projectChurch.Views.HomePage"
+             Title="HOME"
+             BackgroundColor="{DynamicResource White}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+          IconImageSource="search.png"
+          Order="Primary"
+          Priority="0"
+          Clicked="OnSearchClicked"/>
+
+    </ContentPage.ToolbarItems>
+   
+
+    <VerticalStackLayout Padding="60" Spacing="30"  BackgroundColor="{DynamicResource White}">
+        
+        
+        <Image Source="newchurchlogo.png"
+               
+       HeightRequest="250" WidthRequest="250"
+       HorizontalOptions="Center"/>
+      
+
+        <Button Text="Lenaneo"
+        BackgroundColor="{DynamicResource LightGreen }"
+        TextColor="{DynamicResource HeadingWhite}"
+        Clicked="OnPage2Clicked"/>
+
+        <Button Text="Difela"
+        BackgroundColor="{DynamicResource LightGreen }"
+        TextColor="{DynamicResource HeadingWhite}"
+        Clicked="OnPage3Clicked"/>
+
+        <CollectionView x:Name="EntriesCollView"
+         ItemsSource="{Binding Entries}"
+         SelectionMode="Single"
+         IsVisible="Hidden">
+        </CollectionView> 
+        
+    </VerticalStackLayout>
+
+    
+</ContentPage>

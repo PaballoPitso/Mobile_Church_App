@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="projectChurch.SesFolder.SearchPage"
+             Title="SearchPage">
+   
+
+    <Grid Padding="10">
+
+        <!-- Loader -->
+        <ActivityIndicator 
+            IsRunning="{Binding IsLoading, Source={x:Reference thisPage}}"
+            IsVisible="{Binding IsLoading, Source={x:Reference thisPage}}"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Color="DarkBlue"
+            HeightRequest="60"
+            WidthRequest="60"/>
+
+        <VerticalStackLayout Spacing="10">
+
+            <!-- Search Box -->
+            <SearchBar 
+                Placeholder="Search hymn or creed…"
+                TextChanged="SearchBar_TextChanged"
+                FontSize="18" />
+
+            <!-- Filtered Results -->
+            <CollectionView x:Name="SearchResults"
+                            SelectionMode="Single"
+                            IsVisible="{Binding IsLoading, Source={x:Reference thisPage}, Converter={StaticResource InverseBoolConverter}}"
+                            SelectionChanged="SearchResults_SelectionChanged">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10" Margin="5" BackgroundColor="#eeeeee">
+                            <Label Text="{Binding Title}" FontSize="18"/>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

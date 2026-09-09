@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="projectChurch.Views.DetailPage"
+            Title="{Binding Title}"
+             BackgroundColor="{DynamicResource White}">
+    <ScrollView Padding="20">
+        <Label Text="{Binding Content}"
+            FontSize="22" 
+            Padding="10"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            TextColor="{DynamicResource Black}"/>       
+    </ScrollView>
+</ContentPage>
